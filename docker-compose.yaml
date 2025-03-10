@@ -52,6 +52,7 @@ services:
   synapse:
     image: matrixdotorg/synapse:latest
     restart: unless-stopped
+    user: 0:0
     environment:
       SYNAPSE_CONFIG_PATH: /data/config
     configs:
