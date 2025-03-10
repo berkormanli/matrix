@@ -52,9 +52,11 @@ services:
   synapse:
     image: matrixdotorg/synapse:latest
     restart: unless-stopped
-    user: 1000:1000
+    user: "1001:1000"
     environment:
       SYNAPSE_CONFIG_PATH: /data/config
+      UID: 0
+      GID: 0
     configs:
       - source: synapse_homeserver
         target: /data/config/homeserver.yaml
